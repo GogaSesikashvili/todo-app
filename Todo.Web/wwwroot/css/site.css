@@ -1,0 +1,105 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #202124;
+    color: whitesmoke;
+    margin-bottom: 60px;
+}
+
+.navbar-dark .navbar-brand {
+    color: whitesmoke;
+}
+
+    .navbar-dark .navbar-brand:hover {
+        color: white;
+        text-decoration-line: underline;
+    }
+
+a {
+    color: #FEDD00;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #FFE900;
+        text-decoration: none;
+    }
+
+td {
+    color: whitesmoke;
+}
+
+th {
+    color: whitesmoke;
+}
+
+.toast-container {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+}
+
+.toast-body {
+    color: black;
+}
+
+.toast-header {
+    color: whitesmoke;
+    background-color: darkorange;
+}
+
+.toast:hover {
+    background-color: papayawhip;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #e98000;
+    width: 300px;
+    height: 127px;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    .card p {
+        letter-spacing: 0.1rem;
+        margin-bottom: 0;
+        font-size: 30px;
+    }
+
+    .card:hover {
+        background-color: #fca02f;
+        transition: 0.3s ease;
+    }
+
+@media only screen and (max-width : 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        height: 430px;
+    }
+}

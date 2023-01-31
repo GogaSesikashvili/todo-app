@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Todo.Web.Models.TodoEntryViewModel>
+
+@{
+    ViewData["Title"] = "Reminders";
+}
+
+<h1>Reminders</h1>
+
+<p>
+    <a class="bi bi-arrow-left" asp-action="Index" asp-controller="Home"> Back</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reminder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Label)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reminder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Label)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a class="bi bi-info-circle" href="@Url.Action("ViewEntry", new { id=item.Id  })"> Details</a> |
+                <a class="bi bi-pencil" href="@Url.Action("ChangeEntryStatus", new { id=item.Id  })"> Status</a> |
+                <a class="bi bi-trash3" href="@Url.Action("RemoveEntry", new { id=item.Id  })"> Remove</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

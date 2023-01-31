@@ -1,1 +1,1 @@
-# todo-app
+Capstone project TodoApp

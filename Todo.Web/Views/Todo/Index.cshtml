@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Todo.Web.Models.TodoListViewModel>
+
+@{
+    ViewData["Title"] = "Todo Lists";
+}
+
+<h1>Todo Lists</h1>
+
+<p>
+    <a class="bi bi-plus-square" asp-action="CreateList"> Create</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a class="bi bi-list" href="@Url.Action("ViewEntries", new { listId=item.Id  })"> View</a> |
+                <a class="bi bi-files" href="@Url.Action("CopyList", new { id=item.Id  })"> Copy</a> |
+                <a class="bi bi-pencil-square" href="@Url.Action("ModifyList", new { id=item.Id  })"> Modify</a> |
+                <a class="bi bi-trash3" href="@Url.Action("RemoveList", new { id=item.Id  })"> Remove</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="bi bi-eye-slash" href="@Url.Action("ViewHiddenLists")"> Hidden Lists</a>

@@ -1,0 +1,31 @@
+﻿@model Todo.Web.Models.TodoListViewModel
+
+@{
+    ViewData["Title"] = "Copy List";
+}
+
+<h1>Copy List</h1>
+
+<p>
+    <a class="bi bi-arrow-left" asp-action="@ViewBag.ViewLists"> Back</a>
+</p>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+    </dl>
+    
+    <form asp-action="CopyList">
+        <input asp-for="Id" hidden />
+        <input asp-for="Title" hidden />
+        <input asp-for="Hide" hidden />
+        <input asp-for="ToDoEntries" hidden />
+        <input type="submit" value="Copy" class="btn btn-primary" />
+    </form>
+</div>

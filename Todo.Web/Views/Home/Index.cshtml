@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 style="margin-bottom:20px" class="display-4">Welcome</h1>
+
+
+
+    <div class="cards">
+
+        <a href="@Url.Action("ViewEntriesDueToday", "Todo")">
+            <div class="card">
+                <div><p>Today</p></div>
+                <div>
+                    <p style="color:white;">@ViewBag.entriesCountDueToday<span style="font-size:20px;">(Entries)</span></p>
+                </div>
+            </div>
+        </a>
+
+        <a href="@Url.Action("ViewPersonalEntries", "Todo")">
+            <div class="card">
+                <div><p>Personal</p></div>
+                <div>
+                    <p style="color:white;">@ViewBag.personalEntriesCount<span style="font-size:20px;">(Entries)</span></p>
+                </div>
+            </div>
+        </a>
+
+        <a href="@Url.Action("ViewReminderEntries", "Todo")">
+            <div class="card">
+                <div><p>Reminders</p></div>
+                <div>
+                    <p style="color:white;">@ViewBag.reminderEntriesCount<span style="font-size:20px;">(Entries)</span></p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>
